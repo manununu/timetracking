@@ -1,14 +1,32 @@
-# timetracking
-## used tools
+# Timetracking
+## Dependencies 
 * [taskwarrior](https://taskwarrior.org/)
 * [timewarrior](https://timewarrior.net/)
-## hook script (timewarrior <-> taskwarrior)
+## Installation
 ```
-$ cp ext/on-modify.timewarrior ~/.task/hooks/
-$ chmod +x ~/.task/hooks/on-modify.timewarrior
+sudo apt install taskwarrior -y
+sudo apt install timewarrior -y
+git clone https://github.com/manununu/timetracking.git
 ```
-
-## useful .bashrc alias
+## Setup
+### Create .taskrc file 
 ```
-alias timewday='timew day rc.reports.day.lines=4'
+echo "data.location=~/timetracking/.task" > ~/.taskrc
+```
+### Create alias for task 
+```
+echo "alias task='task rc.data.location=~/timetracking/.task'" >> ~/.bashrc
+```
+## Create symlink for timewarrior
+```
+ln -s ~/timetracking/.timewarrior ~/.timewarrior
+```
+## Set up hook script 
+```
+cp /usr/share/doc/timewarrior/ext/on-modify.timewarrior ~/.task/hooks/
+chmod +x ~/.task/hooks/on-modify.timewarrior
+```
+## Useful .bashrc alias
+```
+echo "alias timewday='timew day rc.reports.day.lines=4'" >> ~/.bashrc
 ```
