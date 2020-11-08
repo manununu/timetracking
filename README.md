@@ -83,6 +83,9 @@ timew summary saturday
 timew summary :year
 timew summary :quarter
 timew summary :ids # get id's
+timew summary TAG
+timew day 
+timew day rc.reports.day.hours=auto rc.reports.day.lines=4
 
 # Corrections
 timew untag @1 Presentation
