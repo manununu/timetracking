@@ -1,4 +1,14 @@
 # Timetracking
+
+## Solve
+* task started 20 mins ago > did another task instead > task can't be renamed since there are dependencies in place
+* "task 1 mod start:now" does not change the entry in timew
+* => how to cancel a task?
+* ugly fix: 
+    1. task 1 mod start now  
+    2. edit timestamp in data/2020-11.data
+    3. timew track 09:12 - 10:02 'task done instead' 
+    
 ## Dependencies 
 * [taskwarrior](https://taskwarrior.org/)
 * [timewarrior](https://timewarrior.net/)
@@ -42,9 +52,11 @@ task 1 mod priority:H # set priority
 task add project:homework "Throw out the trash"
 task 2 mod depends:1 # set dependency
 task 2 mod depends: # remove dependency
+task 2 mod due:eom
 task 2 mod status:pending # set status
 task 2 delete # delete task
 task 1 done # complete task
+task add pay rent due:28th recur:monthly until:now+1yr
 
 task calendar # show calendar view
 task burndown # show barchart
