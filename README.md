@@ -1,14 +1,5 @@
 # Timetracking
 
-## Solve
-* task started 20 mins ago > did another task instead > task can't be renamed since there are dependencies in place
-* "task 1 mod start:now" does not change the entry in timew
-* => how to cancel a task?
-* ugly fix: 
-    1. task 1 mod start now  
-    2. edit timestamp in data/2020-11.data
-    3. timew track 09:12 - 10:02 'task done instead' 
-    
 ## Dependencies 
 * [taskwarrior](https://taskwarrior.org/)
 * [timewarrior](https://timewarrior.net/)
@@ -16,20 +7,6 @@
 ```
 sudo apt install taskwarrior -y
 sudo apt install timewarrior -y
-git clone https://github.com/manununu/timetracking.git
-```
-## Setup
-### Create .taskrc file 
-```
-echo "data.location=~/timetracking/.task" > ~/.taskrc
-```
-### Create alias for task 
-```
-echo "alias task='task rc.data.location=~/timetracking/.task'" >> ~/.bashrc
-```
-## Create symlink for timewarrior
-```
-ln -s ~/timetracking/.timewarrior ~/.timewarrior
 ```
 ## Set up hook script 
 ```
